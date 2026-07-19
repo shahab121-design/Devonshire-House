@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treatments | Devonshire House Skin Clinic</title>
+  <meta name="description" content="Explore our range of non-surgical aesthetic treatments — Electro Micro Surgery, ZO Skin Health, Dermaroller, Lipoglaze, Medical Micropigmentation, and Men's Treatments. Brentwood, Essex.">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    /* Treatment Detail Sections */
+    .treatment-detail {
+      scroll-margin-top: calc(var(--header-height) + 32px);
+    }
+    .treatment-detail__content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .treatment-detail__content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+      }
+    }
+    .treatment-detail__image {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .treatment-detail__image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .treatment-detail__text h3 {
+      margin-bottom: var(--space-2);
+    }
+    .treatment-detail__text p {
+      color: var(--color-text-muted);
+      font-size: 15px;
+    }
+    .treatment-detail + .treatment-detail {
+      margin-top: var(--space-10);
+      padding-top: var(--space-10);
+      border-top: 1px solid var(--color-border);
+    }
+    /* Filter Pills */
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-1);
+      margin-bottom: var(--space-8);
+    }
+    .filter-pill {
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      color: var(--color-text-muted);
+      transition: all var(--transition-fast);
+      background: var(--color-white);
+      text-decoration: none;
+    }
+    .filter-pill:hover,
+    .filter-pill.active {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-white);
+    }
+    /* FAQ Accordion */
+    .faq-section { margin-top: var(--space-10); }
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: var(--space-3) 0;
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--color-heading);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: color var(--transition-fast);
+      background: none;
+      border: none;
+    }
+    .faq-question:hover { color: var(--color-accent); }
+    .faq-question svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast);
+      color: var(--color-text-muted);
+    }
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-base), padding var(--transition-base);
+    }
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      padding-bottom: var(--space-4);
+    }
+    .faq-answer p {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="contact.html" class="floating-cta" aria-label="Book a consultation">Book Now</a>
+
+  <!-- HEADER -->
+  <header class="header scrolled" id="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Home"><img src="assets/images/devonshirelogo.png" alt="Devonshire House Skin Clinic" width="163" height="170"></a>
+      <nav class="header__nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown"><a href="treatments.html" class="active">Treatments</a>
+          <div class="nav-dropdown__menu"><a href="#electro-micro-surgery">Electro Micro Surgery (Cosmetic Removal Of Benign Growths)</a><a href="#zo-skin-health">ZO Skin Health</a><a href="#mens-treatments">Men's Treatments</a><a href="#micropigmentation">Medical Micropigmentation (Stretch Marks)</a><a href="#dermaroller">Dermaroller</a><a href="#lipoglaze">Lipoglaze</a></div>
+        </div>
+        <a href="about.html">About Jilla</a>
+        <a href="price-guide.html">Price Guide</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="photo-gallery.html">Photo Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn--primary header__cta">Book Now</a>
+      <button class="header__toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="treatments.html">Treatments</a><a href="about.html">About Jilla</a><a href="price-guide.html">Price Guide</a><a href="reviews.html">Reviews</a><a href="photo-gallery.html">Photo Gallery</a><a href="contact.html">Contact Us</a>
+  </div>
+
+  <main id="main-content" style="padding-top: var(--header-height);">
+
+    <!-- PAGE HEADER -->
+    <section class="section" style="padding-bottom: var(--space-6);">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Our Expertise</span>
+          <h1>Treatments</h1>
+          <p>Non-surgical aesthetic and skin health treatments, each delivered with precision expertise by Jilla Malek-Mohammadi.</p>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="filter-pills">
+          <a href="#electro-micro-surgery" class="filter-pill">Electro Micro Surgery</a>
+          <a href="#zo-skin-health" class="filter-pill">ZO Skin Health</a>
+          <a href="#mens-treatments" class="filter-pill">Men's Treatments</a>
+          <a href="#micropigmentation" class="filter-pill">Micropigmentation</a>
+          <a href="#dermaroller" class="filter-pill">Dermaroller</a>
+          <a href="#lipoglaze" class="filter-pill">Lipoglaze</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TREATMENT DETAILS -->
+    <section class="section section--alt" style="padding-top: var(--space-8);">
+      <div class="container">
+
+        <!-- 1. Electro Micro Surgery -->
+        <div class="treatment-detail reveal" id="electro-micro-surgery">
+          <div class="treatment-detail__content">
+            <div class="treatment-detail__image">
+              <img src="assets/images/treatment_electro.png" alt="Electro Micro Surgery treatment" loading="lazy">
+            </div>
+            <div class="treatment-detail__text">
+              <span class="eyebrow">Signature Treatment</span>
+              <h3>Electro Micro Surgery</h3>
+              <p>Our flagship treatment — the cosmetic removal of benign growths including moles, skin tags, warts, verrucas, seborrhoeic keratosis, and cysts. Using advanced electro micro surgery techniques, Jilla delivers precise, controlled results with minimal scarring and rapid healing.</p>
+              <p>This non-surgical alternative to excision requires no stitches, leaves virtually no scarring, and most treatments are completed in a single session. Ideal for facial and body growths that cause cosmetic concern.</p>
+              <a href="contact.html" class="btn btn--primary" style="margin-top: var(--space-3);">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ZO Skin Health -->
+        <div class="treatment-detail reveal" id="zo-skin-health">
+          <div class="treatment-detail__content">
+            <div class="treatment-detail__image">
+              <img src="assets/images/treatment_zo_skin.png" alt="ZO Skin Health products" loading="lazy">
+            </div>
+            <div class="treatment-detail__text">
+              <span class="eyebrow">Medical-Grade Skincare</span>
+              <h3>ZO Skin Health &amp; Skin Peels</h3>
+              <p>We are an authorised ZO Skin Health provider, offering Dr. Zein Obagi's renowned medical-grade skincare range. These products and professional peels target sun damage, pigmentation, acne, fine lines, and overall skin rejuvenation.</p>
+              <p>Each ZO treatment plan is customised to your skin type and concerns, combining in-clinic professional peels with a take-home regimen for lasting results. Experience the gold standard in evidence-based skincare.</p>
+              <a href="contact.html" class="btn btn--primary" style="margin-top: var(--space-3);">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Men's Treatments -->
+        <div class="treatment-detail reveal" id="mens-treatments">
+          <div class="treatment-detail__content">
+            <div class="treatment-detail__image">
+              <img src="assets/images/treatment_mens.png" alt="Men's aesthetic treatments" loading="lazy">
+            </div>
+            <div class="treatment-detail__text">
+              <span class="eyebrow">Tailored For Men</span>
+              <h3>Men's Treatments</h3>
+              <p>An increasing number of men are seeking aesthetic treatments, and we provide a discreet, comfortable environment specifically designed for male clients. From skin tag and mole removal to advanced facial treatments, our procedures are tailored to male skin.</p>
+              <p>Whether you're looking to remove an unsightly growth, rejuvenate your complexion, or address specific skin concerns, Jilla's expertise ensures natural-looking results with zero downtime.</p>
+              <a href="contact.html" class="btn btn--primary" style="margin-top: var(--space-3);">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Medical Micropigmentation -->
+        <div class="treatment-detail reveal" id="micropigmentation">
+          <div class="treatment-detail__content">
+            <div class="treatment-detail__image">
+              <img src="assets/images/treatment_mca.png" alt="Medical Micropigmentation procedure" loading="lazy">
+            </div>
+            <div class="treatment-detail__text">
+              <span class="eyebrow">Precision Artistry</span>
+              <h3>Medical Micropigmentation / MCA</h3>
+              <p>Medical micropigmentation (MCA) is a specialised technique used for skin camouflage and the treatment of stretch marks. By implanting medical-grade pigments into the skin, we can effectively blend scars, burns, vitiligo patches, and stretch marks with your natural skin tone.</p>
+              <p>Jilla's artistic background and steady hand make her uniquely qualified for this precision work. Results are natural-looking and long-lasting, restoring confidence where skin irregularities once caused concern.</p>
+              <a href="contact.html" class="btn btn--primary" style="margin-top: var(--space-3);">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Dermaroller -->
+        <div class="treatment-detail reveal" id="dermaroller">
+          <div class="treatment-detail__content">
+            <div class="treatment-detail__image">
+              <img src="assets/images/treatment_dermaroller.png" alt="Dermaroller micro-needling" loading="lazy">
+            </div>
+            <div class="treatment-detail__text">
+              <span class="eyebrow">Skin Rejuvenation</span>
+              <h3>Dermaroller</h3>
+              <p>Dermaroller micro-needling is a clinically proven treatment that stimulates your skin's natural collagen and elastin production. Fine needles create controlled micro-injuries, triggering the body's healing response and resulting in firmer, smoother, more youthful skin.</p>
+              <p>Effective for reducing fine lines, wrinkles, acne scars, enlarged pores, and improving overall skin texture and radiance. Multiple sessions are recommended for optimal results, with each treatment building upon the last.</p>
+              <a href="contact.html" class="btn btn--primary" style="margin-top: var(--space-3);">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Lipoglaze -->
+        <div class="treatment-detail reveal" id="lipoglaze">
+          <div class="treatment-detail__content">
+            <div class="treatment-detail__image">
+              <img src="assets/images/treatment_lipoglaze.png" alt="Lipoglaze fat freezing treatment" loading="lazy">
+            </div>
+            <div class="treatment-detail__text">
+              <span class="eyebrow">Body Contouring</span>
+              <h3>Lipoglaze / Cryolipolysis</h3>
+              <p>Lipoglaze uses cryolipolysis (fat freezing) technology to target and eliminate stubborn fat deposits that resist diet and exercise. The non-invasive procedure crystallises fat cells, which are then naturally eliminated by the body over the following weeks.</p>
+              <p>No needles, no anaesthesia, no downtime. Treatment areas include the abdomen, flanks, thighs, upper arms, and double chin. Results become visible within 2–4 weeks, with full effects typically seen after 8–12 weeks.</p>
+              <a href="contact.html" class="btn btn--primary" style="margin-top: var(--space-3);">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="faq-section reveal">
+          <div class="section__header" style="margin-top: var(--space-10);">
+            <span class="eyebrow">Common Questions</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+
+          <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is electro micro surgery painful?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Most patients describe the sensation as a slight tingling or warm prick. A topical anaesthetic cream is applied before treatment to minimise any discomfort. The procedure is very quick — most growths are treated in seconds.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How long does recovery take?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Recovery times vary by treatment. For electro micro surgery, a small crust forms over the treated area which typically falls off within 7–14 days, revealing healed skin beneath. For most treatments, there is no significant downtime.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Do you offer free consultations?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, we offer free initial consultations for all treatments. During your consultation, Jilla will assess your concerns, explain the recommended treatment options, and provide a clear pricing overview with no obligation.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Will there be scarring?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>One of the key advantages of electro micro surgery is minimal to no scarring. Jilla's precision technique and years of experience ensure that treated areas heal cleanly. Many patients report no visible scarring at all after healing is complete.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How many sessions will I need?
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>This depends on the treatment. Electro micro surgery for skin tags and small moles is typically completed in one session. Dermaroller treatments are usually recommended as a course of 3–6 sessions. ZO Skin Health peels may be done as a series. Your consultation will include a clear treatment plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-section__bg" style="background-image: url('assets/images/hero_bg.png');"></div>
+      <div class="cta-section__overlay"></div>
+      <div class="container cta-section__content">
+        <span class="eyebrow" style="color: var(--color-accent-light);">Ready to Begin?</span>
+        <h2>Take the Next Step</h2>
+        <p>Book your free consultation today and discover the right treatment for you.</p>
+        <div class="cta-section__buttons">
+          <a href="contact.html" class="btn btn--primary btn--lg">Book a Consultation</a>
+          <a href="tel:01277214879" class="btn btn--white btn--lg">Call 01277 214 879</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="footer__logo"><img src="assets/images/devonshirelogo.png" alt="Devonshire House Skin Clinic" width="163" height="170"></div><p>Pioneering skin treatments and non-surgical aesthetics. Creating the best possible version of you.</p></div>
+        <div class="footer__links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="treatments.html">Treatments</a><a href="about.html">About Jilla</a><a href="price-guide.html">Price Guide</a><a href="reviews.html">Reviews</a><a href="photo-gallery.html">Photo Gallery</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer__contact"><h4>Address</h4><p>Devonshire House Skin Clinic<br>1st Floor, Merrymeade House<br>Brentwood, Essex, CM15 9FE</p><p style="margin-top:16px;">Mon – Fri: 8:30 am – 6:30 pm<br>Saturday: 9:00 am – 2:00 pm<br>Sunday: Closed</p></div>
+        <div class="footer__contact"><h4>Get In Touch</h4><p><a href="tel:01277214879">01277 214 879</a><br><a href="mailto:info@devonshirehouseskin.co.uk">info@devonshirehouseskin.co.uk</a></p>
+          <div class="footer__social">
+            <a href="https://facebook.com/1593580254194009" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/devonshire_house_skin/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+            <a href="https://twitter.com/jilla_Aesthetic" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.linkedin.com/in/jilla-malek-mohammadi-9968a725" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><div>&copy; 2025 Devonshire House Skin Clinic. All rights reserved.</div><div class="footer__legal"><a href="#">Refund Policy</a><span>|</span><a href="#">Disclaimer</a><span>|</span><a href="#">Terms of Use</a><span>|</span><a href="#">Privacy Policy</a></div></div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        // Toggle current
+        if (!isOpen) item.classList.add('open');
+        this.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+
+    // Highlight filter pill on scroll
+    var treatments = document.querySelectorAll('.treatment-detail');
+    var pills = document.querySelectorAll('.filter-pill');
+    if (treatments.length && pills.length) {
+      var pillObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            pills.forEach(function(p) { p.classList.remove('active'); });
+            var target = document.querySelector('.filter-pill[href="#' + entry.target.id + '"]');
+            if (target) target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '-100px 0px -50% 0px' });
+      treatments.forEach(function(t) { pillObserver.observe(t); });
+    }
+  </script>
+</body>
+</html>

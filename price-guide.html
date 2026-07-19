@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Price Guide | Devonshire House Skin Clinic</title>
+  <meta name="description" content="View our transparent pricing for all aesthetic treatments at Devonshire House Skin Clinic, Brentwood. Free consultations available.">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--space-8);
+    }
+    .price-table caption {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--color-heading);
+      text-align: left;
+      padding-bottom: var(--space-3);
+      border-bottom: 2px solid var(--color-accent);
+      margin-bottom: var(--space-2);
+      caption-side: top;
+    }
+    .price-table th {
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      padding: var(--space-2) var(--space-2);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .price-table td {
+      padding: 14px var(--space-2);
+      font-size: 15px;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text);
+    }
+    .price-table tr:nth-child(even) td {
+      background-color: var(--color-bg-alt);
+    }
+    .price-table tr:hover td {
+      background-color: rgba(201, 169, 110, 0.06);
+    }
+    .price-table .price {
+      font-weight: 500;
+      color: var(--color-heading);
+      white-space: nowrap;
+    }
+    .price-note {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      font-style: italic;
+      margin-top: var(--space-1);
+    }
+    .price-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background-color: var(--color-accent);
+      color: var(--color-white);
+      border-radius: var(--radius-pill);
+      margin-left: var(--space-1);
+    }
+    @media (max-width: 639px) {
+      .price-table th:nth-child(3),
+      .price-table td:nth-child(3) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="contact.html" class="floating-cta" aria-label="Book a consultation">Book Now</a>
+
+  <!-- HEADER -->
+  <header class="header scrolled" id="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Home"><img src="assets/images/devonshirelogo.png" alt="Devonshire House Skin Clinic" width="163" height="170"></a>
+      <nav class="header__nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown"><a href="treatments.html">Treatments</a>
+          <div class="nav-dropdown__menu"><a href="treatments.html#electro-micro-surgery">Electro Micro Surgery (Cosmetic Removal Of Benign Growths)</a><a href="treatments.html#zo-skin-health">ZO Skin Health</a><a href="treatments.html#mens-treatments">Men's Treatments</a><a href="treatments.html#micropigmentation">Medical Micropigmentation (Stretch Marks)</a><a href="treatments.html#dermaroller">Dermaroller</a><a href="treatments.html#lipoglaze">Lipoglaze</a></div>
+        </div>
+        <a href="about.html">About Jilla</a>
+        <a href="price-guide.html" class="active">Price Guide</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="photo-gallery.html">Photo Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn--primary header__cta">Book Now</a>
+      <button class="header__toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a><a href="treatments.html">Treatments</a><a href="about.html">About Jilla</a><a href="price-guide.html">Price Guide</a><a href="reviews.html">Reviews</a><a href="photo-gallery.html">Photo Gallery</a><a href="contact.html">Contact Us</a>
+  </div>
+
+  <main id="main-content" style="padding-top: var(--header-height);">
+
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Transparent Pricing</span>
+          <h1>Price Guide</h1>
+          <p>All prices include consultation. We believe in transparent, fair pricing with no hidden costs.</p>
+        </div>
+
+        <div style="max-width: 900px; margin: 0 auto;">
+
+          <!-- Electro Micro Surgery -->
+          <table class="price-table reveal">
+            <caption>Electro Micro Surgery <span class="price-badge">Most Popular</span></caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Single Skin Tag (small)</td><td class="price">From £75</td><td>10–15 min</td></tr>
+              <tr><td>Multiple Skin Tags (up to 5)</td><td class="price">From £150</td><td>20–30 min</td></tr>
+              <tr><td>Mole Removal (single)</td><td class="price">From £150</td><td>15–20 min</td></tr>
+              <tr><td>Mole Removal (multiple)</td><td class="price">From £250</td><td>30–45 min</td></tr>
+              <tr><td>Seborrhoeic Keratosis</td><td class="price">From £150</td><td>15–25 min</td></tr>
+              <tr><td>Cyst Removal / Drainage</td><td class="price">From £200</td><td>20–30 min</td></tr>
+              <tr><td>Wart / Verruca Removal</td><td class="price">From £100</td><td>10–20 min</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">Prices vary depending on size, location, and number of growths. A precise quote is given at your free consultation.</p>
+
+          <!-- ZO Skin Health -->
+          <table class="price-table reveal">
+            <caption>ZO Skin Health &amp; Peels</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>ZO Skin Health Consultation &amp; Prescription</td><td class="price">Free</td><td>30 min</td></tr>
+              <tr><td>ZO Stimulator Peel</td><td class="price">From £150</td><td>45 min</td></tr>
+              <tr><td>ZO 3-Step Peel</td><td class="price">From £250</td><td>60 min</td></tr>
+              <tr><td>ZO Skin Health Products</td><td class="price">Varies</td><td>–</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Dermaroller -->
+          <table class="price-table reveal">
+            <caption>Dermaroller</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Single Session (face)</td><td class="price">From £200</td><td>45–60 min</td></tr>
+              <tr><td>Course of 3 Sessions</td><td class="price">From £500</td><td>45–60 min each</td></tr>
+              <tr><td>Course of 6 Sessions</td><td class="price">From £900</td><td>45–60 min each</td></tr>
+              <tr><td>Body Area (per session)</td><td class="price">From £250</td><td>60 min</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Medical Micropigmentation -->
+          <table class="price-table reveal">
+            <caption>Medical Micropigmentation / MCA</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Stretch Mark Camouflage (small area)</td><td class="price">From £200</td><td>60–90 min</td></tr>
+              <tr><td>Stretch Mark Camouflage (large area)</td><td class="price">From £400</td><td>90–120 min</td></tr>
+              <tr><td>Scar Camouflage</td><td class="price">From £250</td><td>60–90 min</td></tr>
+              <tr><td>Vitiligo Camouflage</td><td class="price">From £300</td><td>60–120 min</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Lipoglaze -->
+          <table class="price-table reveal">
+            <caption>Lipoglaze / Cryolipolysis</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Single Area</td><td class="price">From £350</td><td>60 min</td></tr>
+              <tr><td>Two Areas</td><td class="price">From £600</td><td>60 min each</td></tr>
+              <tr><td>Three Areas</td><td class="price">From £800</td><td>60 min each</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">All consultations are free of charge and carry no obligation. Prices are indicative and may vary based on individual assessment.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-section__bg" style="background-image: url('assets/images/hero_bg.png');"></div>
+      <div class="cta-section__overlay"></div>
+      <div class="container cta-section__content">
+        <span class="eyebrow" style="color: var(--color-accent-light);">Free Consultation</span>
+        <h2>Ready to Book?</h2>
+        <p>Contact us for a free, no-obligation consultation and receive your personalised treatment quote.</p>
+        <div class="cta-section__buttons">
+          <a href="contact.html" class="btn btn--primary btn--lg">Book a Consultation</a>
+          <a href="tel:01277214879" class="btn btn--white btn--lg">Call 01277 214 879</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="footer__logo"><img src="assets/images/devonshirelogo.png" alt="Devonshire House Skin Clinic" width="163" height="170"></div><p>Pioneering skin treatments and non-surgical aesthetics. Creating the best possible version of you.</p></div>
+        <div class="footer__links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="treatments.html">Treatments</a><a href="about.html">About Jilla</a><a href="price-guide.html">Price Guide</a><a href="reviews.html">Reviews</a><a href="photo-gallery.html">Photo Gallery</a><a href="contact.html">Contact Us</a></div>
+        <div class="footer__contact"><h4>Address</h4><p>Devonshire House Skin Clinic<br>1st Floor, Merrymeade House<br>Brentwood, Essex, CM15 9FE</p><p style="margin-top:16px;">Mon – Fri: 8:30 am – 6:30 pm<br>Saturday: 9:00 am – 2:00 pm<br>Sunday: Closed</p></div>
+        <div class="footer__contact"><h4>Get In Touch</h4><p><a href="tel:01277214879">01277 214 879</a><br><a href="mailto:info@devonshirehouseskin.co.uk">info@devonshirehouseskin.co.uk</a></p>
+          <div class="footer__social">
+            <a href="https://facebook.com/1593580254194009" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/devonshire_house_skin/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+            <a href="https://twitter.com/jilla_Aesthetic" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.linkedin.com/in/jilla-malek-mohammadi-9968a725" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"><div>&copy; 2025 Devonshire House Skin Clinic. All rights reserved.</div><div class="footer__legal"><a href="#">Refund Policy</a><span>|</span><a href="#">Disclaimer</a><span>|</span><a href="#">Terms of Use</a><span>|</span><a href="#">Privacy Policy</a></div></div>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
+</body>
+</html>

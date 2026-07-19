@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Devonshire House Skin Clinic</title>
+  <meta name="description" content="Book a consultation at Devonshire House Skin Clinic. Contact Jilla Malek-Mohammadi for expert skin treatments in Brentwood, Essex. Call 01277 214 879.">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="contact.html" class="floating-cta" aria-label="Book a consultation">Book Now</a>
+
+  <!-- HEADER -->
+  <header class="header scrolled" id="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="Devonshire House Skin Clinic — Home">
+        <img src="assets/images/devonshirelogo.png" alt="Devonshire House Skin Clinic" width="163" height="170">
+      </a>
+      <nav class="header__nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="treatments.html">Treatments</a>
+          <div class="nav-dropdown__menu">
+            <a href="treatments.html#electro-micro-surgery">Electro Micro Surgery (Cosmetic Removal Of Benign Growths)</a>
+            <a href="treatments.html#zo-skin-health">ZO Skin Health</a>
+            <a href="treatments.html#mens-treatments">Men's Treatments</a>
+            <a href="treatments.html#micropigmentation">Medical Micropigmentation (Stretch Marks)</a>
+            <a href="treatments.html#dermaroller">Dermaroller</a>
+            <a href="treatments.html#lipoglaze">Lipoglaze</a>
+          </div>
+        </div>
+        <a href="about.html">About Jilla</a>
+        <a href="price-guide.html">Price Guide</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="photo-gallery.html">Photo Gallery</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn--primary header__cta">Book Now</a>
+      <button class="header__toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu__overlay" id="mobile-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="treatments.html">Treatments</a>
+    <a href="about.html">About Jilla</a>
+    <a href="price-guide.html">Price Guide</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="photo-gallery.html">Photo Gallery</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <main id="main-content" style="padding-top: var(--header-height);">
+
+    <!-- PAGE HEADER -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="section__header" style="margin-bottom: var(--space-4);">
+          <span class="eyebrow">Get In Touch</span>
+          <h1>Contact Us</h1>
+          <p>Have a question or ready to book? We'd love to hear from you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM + INFO -->
+    <section class="section" style="padding-top: var(--space-6);">
+      <div class="container">
+        <div class="grid-2" style="gap: var(--space-10);">
+
+          <!-- LEFT: Booking Form -->
+          <div class="reveal">
+            <h2 style="font-size: 28px; margin-bottom: var(--space-1);">Schedule Your Appointment</h2>
+            <p class="text-muted" style="margin-bottom: var(--space-5);">If you have any questions, you can contact us. Please fill out the form below.</p>
+
+            <form id="booking-form" novalidate>
+              <!-- Row 1: Treatment + Name -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="treatment-select" class="form-label">Treatment</label>
+                  <select id="treatment-select" name="treatment" class="form-select">
+                    <option value="">Select Treatment</option>
+                    <option value="Electro-Micro-Surgery">Electro Micro Surgery (Cosmetic Removal Of Benign Growths)</option>
+                    <option value="Medical-Micropigmentation-MCA">Medical Micropigmentation/MCA (Stretch Marks)</option>
+                    <option value="Mens-Treatments">Men's Treatments</option>
+                    <option value="Dermaroller">Dermaroller</option>
+                    <option value="ZO-Skin-Health">ZO Skin Health Skin Peels</option>
+                    <option value="Lipoglaze-Cryolipolysis">Lipoglaze / Cryolipolysis</option>
+                    <option value="Skin-Condition-Treatment">Skin Condition Treatment</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="client-name" class="form-label">Your Name <span class="required">*</span></label>
+                  <input type="text" id="client-name" name="name" class="form-input" placeholder="Your Name" required autocomplete="name">
+                  <div class="form-error">Please enter your name.</div>
+                </div>
+              </div>
+
+              <!-- Row 2: Phone + Email -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="client-phone" class="form-label">Your Phone</label>
+                  <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="Your Phone" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                  <label for="client-email" class="form-label">Email Address</label>
+                  <input type="email" id="client-email" name="email" class="form-input" placeholder="E.g. john@doe.com" autocomplete="email">
+                  <div class="form-error">Please enter a valid email address.</div>
+                </div>
+              </div>
+
+              <!-- Row 3: Message -->
+              <div class="form-group">
+                <label for="client-message" class="form-label">Message</label>
+                <textarea id="client-message" name="message" class="form-textarea" placeholder="Tell us about your enquiry..."></textarea>
+              </div>
+
+              <!-- Row 4: File Upload -->
+              <div class="form-group">
+                <label class="form-label">Upload File</label>
+                <div class="form-upload" id="upload-zone">
+                  <div class="form-upload__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  </div>
+                  <p class="form-upload__text">Drag and Drop or <a href="#" onclick="return false;">Choose Files</a></p>
+                  <p class="form-upload__hint">Please attach an image of what you would like treated. Max 8MB.</p>
+                </div>
+                <input type="file" id="file-upload" name="upload" accept="image/*" multiple style="display: none;">
+              </div>
+
+              <!-- Submit -->
+              <div class="form-submit">
+                <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Submit</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- RIGHT: Contact Info -->
+          <div class="reveal reveal-delay-2">
+            <!-- Info Card -->
+            <div style="background-color: var(--color-bg-alt); border-radius: var(--radius-md); padding: var(--space-5); margin-bottom: var(--space-4);">
+              <h3 style="margin-bottom: var(--space-3);">Contact Information</h3>
+              <p class="text-muted" style="margin-bottom: var(--space-4);">Thank you for visiting our website. We are here to assist you with any inquiries you may have.</p>
+
+              <div style="margin-bottom: var(--space-4);">
+                <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1);">Address</h4>
+                <p class="text-muted" style="font-size: 14px; line-height: 1.8;">
+                  Devonshire House Skin Clinic<br>
+                  1st Floor, Merrymeade House<br>
+                  Merrymeade Chase<br>
+                  Brentwood, Essex<br>
+                  CM15 9FE
+                </p>
+              </div>
+
+              <div style="margin-bottom: var(--space-4);">
+                <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1);">Hours</h4>
+                <p class="text-muted" style="font-size: 14px; line-height: 1.8;">
+                  Mon – Fri: 8:30 am – 6:30 pm<br>
+                  Saturday: 9:00 am – 2:00 pm<br>
+                  Sunday: Closed
+                </p>
+              </div>
+
+              <div>
+                <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1);">Phone &amp; Email</h4>
+                <p style="font-size: 14px;">
+                  <a href="tel:01277214879" style="display: block; margin-bottom: 4px;">01277 214 879</a>
+                  <a href="mailto:info@devonshirehouseskin.co.uk">info@devonshirehouseskin.co.uk</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Google Maps -->
+            <div style="border-radius: var(--radius-md); overflow: hidden; height: 300px;">
+              <iframe
+                src="https://maps.google.com/maps?q=Devonshire%20House%20Skin%20Clinic%2C%2024a%20High%20St%2C%20Brentwood%2C%20Essex%2C%20CM14%204AB&t=m&z=15&output=embed&iwloc=near"
+                title="Devonshire House Skin Clinic location"
+                aria-label="Devonshire House Skin Clinic, 24a High St, Brentwood, Essex"
+                width="100%"
+                height="300"
+                style="border:0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo"><img src="assets/images/devonshirelogo.png" alt="Devonshire House Skin Clinic" width="163" height="170"></div>
+          <p>Pioneering skin treatments and non-surgical aesthetics. Creating the best possible version of you with precision-perfect expertise.</p>
+        </div>
+        <div class="footer__links">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="treatments.html">Treatments</a>
+          <a href="about.html">About Jilla</a>
+          <a href="price-guide.html">Price Guide</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="photo-gallery.html">Photo Gallery</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer__contact">
+          <h4>Address</h4>
+          <p>Devonshire House Skin Clinic<br>1st Floor, Merrymeade House<br>Merrymeade Chase<br>Brentwood, Essex<br>CM15 9FE</p>
+          <p style="margin-top: 16px;">Mon – Fri: 8:30 am – 6:30 pm<br>Saturday: 9:00 am – 2:00 pm<br>Sunday: Closed</p>
+        </div>
+        <div class="footer__contact">
+          <h4>Get In Touch</h4>
+          <p><a href="tel:01277214879">01277 214 879</a><br><a href="mailto:info@devonshirehouseskin.co.uk">info@devonshirehouseskin.co.uk</a></p>
+          <div class="footer__social">
+            <a href="https://facebook.com/1593580254194009" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/devonshire_house_skin/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+            <a href="https://twitter.com/jilla_Aesthetic" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://www.linkedin.com/in/jilla-malek-mohammadi-9968a725" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>&copy; 2025 Devonshire House Skin Clinic. All rights reserved.</div>
+        <div class="footer__legal">
+          <a href="#">Refund Policy</a><span>|</span>
+          <a href="#">Disclaimer</a><span>|</span>
+          <a href="#">Terms of Use</a><span>|</span>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
