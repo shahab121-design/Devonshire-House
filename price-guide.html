@@ -68,11 +68,27 @@
       border-radius: var(--radius-pill);
       margin-left: var(--space-1);
     }
-    @media (max-width: 639px) {
-      .price-table th:nth-child(3),
-      .price-table td:nth-child(3) {
-        display: none;
-      }
+    .price-group-title {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--color-heading);
+      margin: var(--space-10) 0 var(--space-2);
+    }
+    .price-group-title:first-of-type {
+      margin-top: 0;
+    }
+    .price-group-intro {
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+    }
+    .price-policy {
+      border-left: 3px solid var(--color-accent);
+      background-color: var(--color-bg-alt);
+      padding: var(--space-3) var(--space-4);
+      font-size: 14px;
+      color: var(--color-text);
+      margin-top: var(--space-4);
     }
   </style>
 </head>
@@ -118,35 +134,132 @@
 
         <div style="max-width: 900px; margin: 0 auto;">
 
-          <!-- Electro Micro Surgery -->
+          <h2 class="price-group-title">Advanced Cosmetic Procedure (ACP) / Electro Micro Surgery</h2>
+          <p class="price-group-intro">All appointments require a prior consultation.</p>
+
+          <!-- Consultation & Anaesthetic -->
           <table class="price-table reveal">
-            <caption>Electro Micro Surgery <span class="price-badge">Most Popular</span></caption>
+            <caption>Clinic Consultation</caption>
             <thead>
-              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+              <tr><th>Treatment</th><th>Price</th></tr>
             </thead>
             <tbody>
-              <tr><td>Single Skin Tag (small)</td><td class="price">From £75</td><td>10–15 min</td></tr>
-              <tr><td>Multiple Skin Tags (up to 5)</td><td class="price">From £150</td><td>20–30 min</td></tr>
-              <tr><td>Mole Removal (single)</td><td class="price">From £150</td><td>15–20 min</td></tr>
-              <tr><td>Mole Removal (multiple)</td><td class="price">From £250</td><td>30–45 min</td></tr>
-              <tr><td>Seborrhoeic Keratosis</td><td class="price">From £150</td><td>15–25 min</td></tr>
-              <tr><td>Cyst Removal / Drainage</td><td class="price">From £200</td><td>20–30 min</td></tr>
-              <tr><td>Wart / Verruca Removal</td><td class="price">From £100</td><td>10–20 min</td></tr>
+              <tr><td>Clinical Consultation (Booked Separately)</td><td class="price">£110</td></tr>
+              <tr><td>Anaesthetic (Topical) — 20–60 min</td><td class="price">£60–£85</td></tr>
             </tbody>
           </table>
-          <p class="price-note">Prices vary depending on size, location, and number of growths. A precise quote is given at your free consultation.</p>
+          <p class="price-note">*Genital areas not treated.</p>
+
+          <!-- Moles -->
+          <table class="price-table reveal">
+            <caption>Moles / Epidermal Naevi / Papillomas <span class="price-badge">Most Popular</span></caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Small Mole</td><td class="price">FROM £210</td></tr>
+              <tr><td>Medium Mole</td><td class="price">FROM £350</td></tr>
+              <tr><td>Large Mole</td><td class="price">FROM £400</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">*All mole treatments require a consultation, please email us a photo prior to booking. Some moles might require 2 treatments and some require a dermatologist's note.</p>
+
+          <!-- Milia / Red Veins etc -->
+          <table class="price-table reveal">
+            <caption>Milia, Red Veins &amp; Related Skin Lesions</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Milia / Red Veins / Spider Naevus / Age Spots / Blood Spots / Cherry Angiomas / Dermatosis Papulosa Nigra / Sebaceous Hyperplasia / Folliculitis / Keratosis Pilaris / Dermatofibroma — Small to Medium Area</td><td class="price">FROM £130–£210</td></tr>
+              <tr><td>Same conditions — Large Area</td><td class="price">FROM £310</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Skin Tags -->
+          <table class="price-table reveal">
+            <caption>Skin Tags</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Small &amp; Large Skin Tags</td><td class="price">From £120–£250</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Seborrhoeic Keratosis / Warts -->
+          <table class="price-table reveal">
+            <caption>Seborrhoeic Keratosis / Molluscum Contagiosum / Warts &amp; Verruca</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Medium Size</td><td class="price">FROM £190</td></tr>
+              <tr><td>Large Size</td><td class="price">From £290</td></tr>
+              <tr><td>Verruca (Small Size)</td><td class="price">From £250</td></tr>
+              <tr><td>Anaesthetic Charge</td><td class="price">FROM £80</td></tr>
+            </tbody>
+          </table>
+          <p class="price-note">*Please note some warts need more than 1 treatment, this will be discussed at consultation.</p>
+
+          <!-- Xanthelasma / Syringoma -->
+          <table class="price-table reveal">
+            <caption>Xanthelasma / Syringoma</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Xanthelasma / Syringoma</td><td class="price">FROM £280–£310</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Facial Sebaceous Cysts -->
+          <table class="price-table reveal">
+            <caption>Facial Sebaceous Cysts</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Small</td><td class="price">FROM £200</td></tr>
+              <tr><td>Medium</td><td class="price">FROM £300</td></tr>
+              <tr><td>Large</td><td class="price">FROM £350</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Sebaceous Cysts Scalp/Body -->
+          <table class="price-table reveal">
+            <caption>Sebaceous Cysts — Scalp &amp; Body</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Small</td><td class="price">FROM £380</td></tr>
+              <tr><td>Medium</td><td class="price">FROM £580</td></tr>
+            </tbody>
+          </table>
+
+          <h2 class="price-group-title">Skin Peels</h2>
+          <p class="price-group-intro">All appointments require a prior consultation.</p>
 
           <!-- ZO Skin Health -->
           <table class="price-table reveal">
-            <caption>ZO Skin Health &amp; Peels</caption>
+            <caption>ZO Skin Health (Dr Obagi)</caption>
             <thead>
-              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+              <tr><th>Treatment</th><th>Price</th></tr>
             </thead>
             <tbody>
-              <tr><td>ZO Skin Health Consultation &amp; Prescription</td><td class="price">Free</td><td>30 min</td></tr>
-              <tr><td>ZO Stimulator Peel</td><td class="price">From £150</td><td>45 min</td></tr>
-              <tr><td>ZO 3-Step Peel</td><td class="price">From £250</td><td>60 min</td></tr>
-              <tr><td>ZO Skin Health Products</td><td class="price">Varies</td><td>–</td></tr>
+              <tr><td>ZO Skin Health Consultation</td><td class="price">£110</td></tr>
+            </tbody>
+          </table>
+
+          <!-- Skin Camouflage -->
+          <table class="price-table reveal">
+            <caption>Skin Camouflage (Vitiligo, Hypo-Pigmentation)</caption>
+            <thead>
+              <tr><th>Treatment</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Including Topical Anaesthetic</td><td class="price">From £600</td></tr>
             </tbody>
           </table>
 
@@ -154,43 +267,39 @@
           <table class="price-table reveal">
             <caption>Dermaroller</caption>
             <thead>
-              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+              <tr><th>Treatment</th><th>Price</th></tr>
             </thead>
             <tbody>
-              <tr><td>Single Session (face)</td><td class="price">From £200</td><td>45–60 min</td></tr>
-              <tr><td>Course of 3 Sessions</td><td class="price">From £500</td><td>45–60 min each</td></tr>
-              <tr><td>Course of 6 Sessions</td><td class="price">From £900</td><td>45–60 min each</td></tr>
-              <tr><td>Body Area (per session)</td><td class="price">From £250</td><td>60 min</td></tr>
+              <tr><td>90 min including anaesthetic &amp; LED</td><td class="price">FROM £280</td></tr>
             </tbody>
           </table>
 
-          <!-- Medical Micropigmentation -->
+          <!-- Medical MCA -->
           <table class="price-table reveal">
-            <caption>Medical Micropigmentation / MCA</caption>
+            <caption>Medical MCA (Dry Needling &amp; Micro-Pigmentation)</caption>
             <thead>
-              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+              <tr><th>Treatment</th><th>Price</th></tr>
             </thead>
             <tbody>
-              <tr><td>Stretch Mark Camouflage (small area)</td><td class="price">From £200</td><td>60–90 min</td></tr>
-              <tr><td>Stretch Mark Camouflage (large area)</td><td class="price">From £400</td><td>90–120 min</td></tr>
-              <tr><td>Scar Camouflage</td><td class="price">From £250</td><td>60–90 min</td></tr>
-              <tr><td>Vitiligo Camouflage</td><td class="price">From £300</td><td>60–120 min</td></tr>
+              <tr><td>MCA (for stretch marks, acne scars, burns, wrinkles) — 30 min</td><td class="price">FROM £250</td></tr>
+              <tr><td>Anaesthetic</td><td class="price">FROM £30</td></tr>
             </tbody>
           </table>
 
           <!-- Lipoglaze -->
           <table class="price-table reveal">
-            <caption>Lipoglaze / Cryolipolysis</caption>
+            <caption>Lipoglaze / Cryolipolysis Fat Freezing</caption>
             <thead>
-              <tr><th>Treatment</th><th>Price</th><th>Duration</th></tr>
+              <tr><th>Treatment</th><th>Price</th></tr>
             </thead>
             <tbody>
-              <tr><td>Single Area</td><td class="price">From £350</td><td>60 min</td></tr>
-              <tr><td>Two Areas</td><td class="price">From £600</td><td>60 min each</td></tr>
-              <tr><td>Three Areas</td><td class="price">From £800</td><td>60 min each</td></tr>
+              <tr><td>One Area</td><td class="price">£150</td></tr>
+              <tr><td>Two Areas</td><td class="price">£250</td></tr>
             </tbody>
           </table>
-          <p class="price-note">All consultations are free of charge and carry no obligation. Prices are indicative and may vary based on individual assessment.</p>
+          <p class="price-note">*20% discount on a course of 3.</p>
+
+          <p class="price-policy">Please note, 48 hours' notice is required for all cancellations or a £100 fine will be applicable.</p>
 
         </div>
       </div>
