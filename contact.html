@@ -6,6 +6,149 @@
   <title>Contact Us | Devonshire House Skin Clinic</title>
   <meta name="description" content="Book a consultation at Devonshire House Skin Clinic. Contact Jilla Malek-Mohammadi for expert skin treatments in Brentwood, Essex. Call 01277 214 879.">
   <link rel="stylesheet" href="index.css">
+  <style>
+    /* ============================
+       Premium Contact Hero
+       ============================ */
+    .contact-hero {
+      padding: var(--space-12) var(--space-4) var(--space-8);
+      text-align: center;
+      background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(201,169,110,0.10), transparent 65%), var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .contact-hero .eyebrow { letter-spacing: 0.24em; }
+    .contact-hero h1 { letter-spacing: -0.01em; margin-bottom: var(--space-3); }
+    .contact-hero__rule {
+      width: 48px;
+      height: 2px;
+      background: var(--color-accent);
+      margin: 0 auto var(--space-4);
+      border-radius: 2px;
+    }
+    .contact-hero__lead {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--color-text-muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ============================
+       Paired Cards Layout
+       ============================ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .contact-grid { grid-template-columns: 1.3fr 1fr; gap: var(--space-6); }
+    }
+    .contact-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: var(--space-6);
+      height: 100%;
+      transition: box-shadow var(--transition-base);
+    }
+    [data-theme="dark"] .contact-card { background-color: #1E1E1E; }
+
+    .contact-form-card { padding: var(--space-8); scroll-margin-top: calc(var(--header-height) + 24px); }
+    @media (max-width: 480px) {
+      .contact-form-card { padding: var(--space-5) var(--space-4); }
+    }
+
+    /* Info rows */
+    .contact-row { display: flex; gap: var(--space-3); align-items: flex-start; }
+    .contact-row + .contact-row {
+      margin-top: var(--space-5);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--color-border);
+    }
+    .contact-row__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-bg-alt);
+      color: var(--color-accent);
+      flex-shrink: 0;
+      transition: all var(--transition-base);
+    }
+    .contact-row__icon svg { width: 20px; height: 20px; }
+    .contact-row:hover .contact-row__icon {
+      background: var(--color-accent);
+      color: var(--color-white);
+      transform: scale(1.06);
+    }
+    .contact-row__label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: 4px;
+    }
+    .contact-row__body a { transition: color var(--transition-fast); }
+    .contact-row__body a:hover { color: var(--color-accent); }
+
+    .contact-map {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 220px;
+      margin-top: var(--space-6);
+      border: 1px solid var(--color-border);
+    }
+    .contact-directions {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: var(--space-2);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    .contact-directions svg { width: 14px; height: 14px; transition: transform var(--transition-fast); }
+    .contact-directions:hover svg { transform: translate(2px, -2px); }
+
+    /* ============================
+       Refined Form Fields
+       ============================ */
+    .field-icon-wrap { position: relative; }
+    .field-icon-wrap .form-input,
+    .field-icon-wrap .form-select { padding-left: 46px; }
+    .field-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-light);
+      pointer-events: none;
+      display: flex;
+      transition: color var(--transition-fast);
+    }
+    .field-icon svg { width: 18px; height: 18px; }
+    .field-icon-wrap:focus-within .field-icon { color: var(--color-accent); }
+
+    .contact-form-card .form-input,
+    .contact-form-card .form-select,
+    .contact-form-card .form-textarea {
+      border-radius: var(--radius-md);
+      background-color: var(--color-bg);
+    }
+    [data-theme="dark"] .contact-form-card .form-input,
+    [data-theme="dark"] .contact-form-card .form-select,
+    [data-theme="dark"] .contact-form-card .form-textarea {
+      background-color: #161616;
+    }
+    .contact-form-card .form-upload { border-radius: var(--radius-md); }
+  </style>
 </head>
 <body>
 
@@ -57,139 +200,163 @@
 
   <main id="main-content" style="padding-top: var(--header-height);">
 
-    <!-- PAGE HEADER -->
-    <section class="section" style="padding-bottom: 0;">
+    <!-- LUXURY HERO -->
+    <section class="contact-hero">
       <div class="container">
-        <div class="section__header" style="margin-bottom: var(--space-4);">
-          <span class="eyebrow">Get In Touch</span>
-          <h1>Contact Us</h1>
-          <p>Have a question or ready to book? We'd love to hear from you.</p>
-        </div>
+        <span class="eyebrow">Inquiry</span>
+        <h1>Begin Your Journey</h1>
+        <div class="contact-hero__rule"></div>
+        <p class="contact-hero__lead">Schedule a private consultation at our Brentwood clinic — Jilla will guide you through the safest, most effective path to your goals.</p>
       </div>
     </section>
 
     <!-- CONTACT FORM + INFO -->
-    <section class="section" style="padding-top: var(--space-6);">
+    <section class="section">
       <div class="container">
-        <div class="grid-2" style="gap: var(--space-10);">
+        <div class="contact-grid">
 
           <!-- LEFT: Booking Form -->
           <div class="reveal">
-            <h2 style="font-size: 28px; margin-bottom: var(--space-1);">Schedule Your Appointment</h2>
-            <p class="text-muted" style="margin-bottom: var(--space-5);">If you have any questions, you can contact us. Please fill out the form below.</p>
+            <div class="contact-card contact-form-card" id="enquiry-form">
+              <h2 style="font-weight: 500; font-size: 28px; margin-bottom: var(--space-1);">Appointment Request</h2>
+              <p class="text-muted" style="margin-bottom: var(--space-5);">If you have any questions, you can contact us. Please fill out the form below.</p>
 
-            <form id="booking-form" novalidate>
-              <!-- Row 1: Treatment + Name -->
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="treatment-select" class="form-label">Treatment</label>
-                  <select id="treatment-select" name="treatment" class="form-select">
-                    <option value="">Select Treatment</option>
-                    <option value="Electro-Micro-Surgery">Electro Micro Surgery (Cosmetic Removal Of Benign Growths)</option>
-                    <option value="Medical-Micropigmentation-MCA">Medical Micropigmentation/MCA (Stretch Marks)</option>
-                    <option value="Mens-Treatments">Men's Treatments</option>
-                    <option value="Dermaroller">Dermaroller</option>
-                    <option value="ZO-Skin-Health">ZO Skin Health Skin Peels</option>
-                    <option value="Lipoglaze-Cryolipolysis">Lipoglaze / Cryolipolysis</option>
-                    <option value="Skin-Condition-Treatment">Skin Condition Treatment</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="client-name" class="form-label">Your Name <span class="required">*</span></label>
-                  <input type="text" id="client-name" name="name" class="form-input" placeholder="Your Name" required autocomplete="name">
-                  <div class="form-error">Please enter your name.</div>
-                </div>
-              </div>
-
-              <!-- Row 2: Phone + Email -->
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="client-phone" class="form-label">Your Phone</label>
-                  <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="Your Phone" autocomplete="tel">
-                </div>
-                <div class="form-group">
-                  <label for="client-email" class="form-label">Email Address</label>
-                  <input type="email" id="client-email" name="email" class="form-input" placeholder="E.g. john@doe.com" autocomplete="email">
-                  <div class="form-error">Please enter a valid email address.</div>
-                </div>
-              </div>
-
-              <!-- Row 3: Message -->
-              <div class="form-group">
-                <label for="client-message" class="form-label">Message</label>
-                <textarea id="client-message" name="message" class="form-textarea" placeholder="Tell us about your enquiry..."></textarea>
-              </div>
-
-              <!-- Row 4: File Upload -->
-              <div class="form-group">
-                <label class="form-label">Upload File</label>
-                <div class="form-upload" id="upload-zone">
-                  <div class="form-upload__icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <form id="booking-form" novalidate>
+                <!-- Row 1: Treatment + Name -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="treatment-select" class="form-label">Treatment</label>
+                    <div class="field-icon-wrap">
+                      <span class="field-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H4a1 1 0 0 0-1 1v5a1 1 0 0 0 .29.7l10 10a1 1 0 0 0 1.42 0l6-6a1 1 0 0 0 0-1.42l-10-10A1 1 0 0 0 9 3Z"/><circle cx="6.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+                      <select id="treatment-select" name="treatment" class="form-select">
+                        <option value="">Select Treatment</option>
+                        <option value="Electro-Micro-Surgery">Electro Micro Surgery (Cosmetic Removal Of Benign Growths)</option>
+                        <option value="Medical-Micropigmentation-MCA">Medical Micropigmentation/MCA (Stretch Marks)</option>
+                        <option value="Mens-Treatments">Men's Treatments</option>
+                        <option value="Dermaroller">Dermaroller</option>
+                        <option value="ZO-Skin-Health">ZO Skin Health Skin Peels</option>
+                        <option value="Lipoglaze-Cryolipolysis">Lipoglaze / Cryolipolysis</option>
+                        <option value="Skin-Condition-Treatment">Skin Condition Treatment</option>
+                      </select>
+                    </div>
                   </div>
-                  <p class="form-upload__text">Drag and Drop or <a href="#" onclick="return false;">Choose Files</a></p>
-                  <p class="form-upload__hint">Please attach an image of what you would like treated. Max 8MB.</p>
+                  <div class="form-group">
+                    <label for="client-name" class="form-label">Your Name <span class="required">*</span></label>
+                    <div class="field-icon-wrap">
+                      <span class="field-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+                      <input type="text" id="client-name" name="name" class="form-input" placeholder="Your Name" required autocomplete="name">
+                    </div>
+                    <div class="form-error">Please enter your name.</div>
+                  </div>
                 </div>
-                <input type="file" id="file-upload" name="upload" accept="image/*" multiple style="display: none;">
-              </div>
 
-              <!-- Submit -->
-              <div class="form-submit">
-                <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Submit</button>
-              </div>
-            </form>
+                <!-- Row 2: Phone + Email -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="client-phone" class="form-label">Your Phone</label>
+                    <div class="field-icon-wrap">
+                      <span class="field-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                      <input type="tel" id="client-phone" name="phone" class="form-input" placeholder="Your Phone" autocomplete="tel">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="client-email" class="form-label">Email Address</label>
+                    <div class="field-icon-wrap">
+                      <span class="field-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                      <input type="email" id="client-email" name="email" class="form-input" placeholder="E.g. john@doe.com" autocomplete="email">
+                    </div>
+                    <div class="form-error">Please enter a valid email address.</div>
+                  </div>
+                </div>
+
+                <!-- Row 3: Message -->
+                <div class="form-group">
+                  <label for="client-message" class="form-label">Message</label>
+                  <textarea id="client-message" name="message" class="form-textarea" placeholder="Tell us about your enquiry..."></textarea>
+                </div>
+
+                <!-- Row 4: File Upload -->
+                <div class="form-group">
+                  <label class="form-label">Upload File</label>
+                  <div class="form-upload" id="upload-zone">
+                    <div class="form-upload__icon">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <p class="form-upload__text">Drag and Drop or <a href="#" onclick="return false;">Choose Files</a></p>
+                    <p class="form-upload__hint">Please attach an image of what you would like treated. Max 8MB.</p>
+                  </div>
+                  <input type="file" id="file-upload" name="upload" accept="image/*" multiple style="display: none;">
+                </div>
+
+                <!-- Submit -->
+                <div class="form-submit">
+                  <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Submit</button>
+                </div>
+              </form>
+            </div>
           </div>
 
           <!-- RIGHT: Contact Info -->
-          <div class="reveal reveal-delay-2">
-            <!-- Info Card -->
-            <div style="background-color: var(--color-bg-alt); border-radius: var(--radius-md); padding: var(--space-5); margin-bottom: var(--space-4);">
-              <h3 style="margin-bottom: var(--space-3);">Contact Information</h3>
-              <p class="text-muted" style="margin-bottom: var(--space-4);">Thank you for visiting our website. We are here to assist you with any inquiries you may have.</p>
+          <aside class="reveal reveal-delay-2">
+            <div class="contact-card">
+              <h4 style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 15px; margin-bottom: var(--space-5);">Visit Us</h4>
 
-              <div style="margin-bottom: var(--space-4);">
-                <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1);">Address</h4>
-                <p class="text-muted" style="font-size: 14px; line-height: 1.8;">
-                  Devonshire House Skin Clinic<br>
-                  1st Floor, Merrymeade House<br>
-                  Merrymeade Chase<br>
-                  Brentwood, Essex<br>
-                  CM15 9FE
-                </p>
+              <div class="contact-row">
+                <span class="contact-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div class="contact-row__body">
+                  <div class="contact-row__label">Address</div>
+                  <p class="text-muted" style="font-size: 14px; line-height: 1.8;">
+                    Devonshire House Skin Clinic<br>
+                    1st Floor, Merrymeade House<br>
+                    Merrymeade Chase<br>
+                    Brentwood, Essex<br>
+                    CM15 9FE
+                  </p>
+                </div>
               </div>
 
-              <div style="margin-bottom: var(--space-4);">
-                <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1);">Hours</h4>
-                <p class="text-muted" style="font-size: 14px; line-height: 1.8;">
-                  Mon – Fri: 8:30 am – 6:30 pm<br>
-                  Saturday: 9:00 am – 2:00 pm<br>
-                  Sunday: Closed
-                </p>
+              <div class="contact-row">
+                <span class="contact-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg></span>
+                <div class="contact-row__body">
+                  <div class="contact-row__label">Hours</div>
+                  <p class="text-muted" style="font-size: 14px; line-height: 1.8;">
+                    Mon – Fri: 8:30 am – 6:30 pm<br>
+                    Saturday: 9:00 am – 2:00 pm<br>
+                    Sunday: Closed
+                  </p>
+                </div>
               </div>
 
-              <div>
-                <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1);">Phone &amp; Email</h4>
-                <p style="font-size: 14px;">
-                  <a href="tel:01277214879" style="display: block; margin-bottom: 4px;">01277 214 879</a>
-                  <a href="mailto:info@devonshirehouseskin.co.uk">info@devonshirehouseskin.co.uk</a>
-                </p>
+              <div class="contact-row">
+                <span class="contact-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <div class="contact-row__body">
+                  <div class="contact-row__label">Phone &amp; Email</div>
+                  <p style="font-size: 14px;">
+                    <a href="tel:01277214879" style="display: block; margin-bottom: 4px;">01277 214 879</a>
+                    <a href="mailto:info@devonshirehouseskin.co.uk">info@devonshirehouseskin.co.uk</a>
+                  </p>
+                </div>
               </div>
+
+              <!-- Google Maps -->
+              <div class="contact-map">
+                <iframe
+                  src="https://maps.google.com/maps?q=Devonshire%20House%20Skin%20Clinic%2C%2024a%20High%20St%2C%20Brentwood%2C%20Essex%2C%20CM14%204AB&t=m&z=15&output=embed&iwloc=near"
+                  title="Devonshire House Skin Clinic location"
+                  aria-label="Devonshire House Skin Clinic, 24a High St, Brentwood, Essex"
+                  width="100%"
+                  height="220"
+                  style="border:0;"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Devonshire+House+Skin+Clinic%2C+24a+High+St%2C+Brentwood%2C+Essex%2C+CM14+4AB" target="_blank" rel="noopener" class="contact-directions">
+                Get Directions
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
             </div>
-
-            <!-- Google Maps -->
-            <div style="border-radius: var(--radius-md); overflow: hidden; height: 300px;">
-              <iframe
-                src="https://maps.google.com/maps?q=Devonshire%20House%20Skin%20Clinic%2C%2024a%20High%20St%2C%20Brentwood%2C%20Essex%2C%20CM14%204AB&t=m&z=15&output=embed&iwloc=near"
-                title="Devonshire House Skin Clinic location"
-                aria-label="Devonshire House Skin Clinic, 24a High St, Brentwood, Essex"
-                width="100%"
-                height="300"
-                style="border:0;"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
+          </aside>
 
         </div>
       </div>

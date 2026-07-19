@@ -151,6 +151,11 @@
   border-top-color: var(--color-border);
 }
 
+[data-theme="dark"] .treatment-card,
+[data-theme="dark"] .cat-pill {
+  background-color: #1E1E1E;
+}
+
 /* Dark mode — carousel buttons */
 [data-theme="dark"] .carousel-btn {
   background-color: #1E1E1E;
